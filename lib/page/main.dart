@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dasar/page/drawerpage.dart';
 import 'package:flutter_dasar/page/secondpage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -53,7 +54,7 @@ class MyHomePage extends StatelessWidget {
       body: new Builder(
         // Create an inner BuildContext so that the onPressed methods
         // can refer to the Scaffold with Scaffold.of().
-        //only for SnackBar
+        // only for SnackBar
         builder: (BuildContext context) {
           return Container(
             alignment: Alignment.center,
@@ -148,6 +149,16 @@ class MyHomePage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => FormPage())
+                    );
+                  },
+                ),
+
+                RaisedButton(
+                  child: new Text('OPEN DRAWER PAGE'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DrawerPage())
                     );
                   },
                 )
